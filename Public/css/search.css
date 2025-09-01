@@ -1,0 +1,138 @@
+
+
+  /* Page Wrapper */
+  .search-page {
+    max-width: 1250px;
+    
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Page Heading */
+  .search-heading {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 30px 0 40px;
+    text-align: center;
+    color: hsl(30, 95%, 40%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.5px;
+  }
+
+  /* Grid Layout */
+  .search-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+  }
+
+  /* Product Card */
+  .search-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  
+  }
+
+  .search-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Image Box */
+  .img-box {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .search-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.3s ease;
+  }
+
+  .search-card:hover .search-img {
+    transform: scale(1.08);
+  }
+
+  /* Card Body */
+  .card-body {
+    padding: 14px;
+    text-align: center;
+  }
+
+  /* Product Title */
+  .product-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 8px 0;
+    color: #333;
+    line-height: 1.3;
+  }
+  .stars {
+    color: #f39c12;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    font-size: 16px;
+  }
+
+  /* Product Price */
+  .product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+
+
+
+
+  /* Add to Cart Form */
+  .cart-form {
+    display: flex;
+    justify-content: center;  
+    padding: 10px 0;          
+    margin: 0;  
+    margin-bottom: 12px;          
+  }
+
+  /* Add to Cart Button */
+  .btn-add {
+    width: auto;                
+    min-width: 140px;           
+    text-align: center;
+    border-radius: 20px;       
+    background-color: #FFD814;  
+    color: #0F1111;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+  }
+
+  .btn-add:hover {
+    background: #F7CA00;        
+    transform: translateY(-2px);
+  }
+
+
+  /* No Results */
+  .no-results {
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    margin-top: 50px;
+    font-weight: 600;
+  }

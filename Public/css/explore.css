@@ -1,0 +1,97 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f9f9f9, #ffe5ec);
+    color: #333;
+  }
+
+  
+  h1 {
+    text-align: center;
+    color: #c71585;
+    padding: 10px;
+    margin: 10px;
+  }
+
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+ .product-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  min-height: 500px;  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} 
+
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 80%;
+  height: 180px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+.product-card h2 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  color: #333;
+  flex-grow: 1; /* To push button down */
+}
+
+.product-card p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.stars {
+  margin: 10px 0;
+  color: #f5a623;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.add-btn {
+background-color: #FFD814;
+  color:black;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 10px;
+}
+
+.add-btn:hover {
+    background-color: #F7CA00;
+}
+
+/* Responsive Fix */
+@media (max-width: 600px) {
+  .product-card img {
+    height: 200px;
+  }
+}

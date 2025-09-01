@@ -1,0 +1,216 @@
+  <script src="/js/script.js" defer></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <%-include('partials/header') %>
+
+  <div class="slider-container">
+    <div class="slides" id="slideWrapper">
+      <!-- Clone Last Slide -->
+      <div class="slide slide<%= sliderData.length %>">
+        <div class="slide-content">
+          <h2><%= sliderData[sliderData.length - 1].title %></h2>
+          <p><%= sliderData[sliderData.length - 1].description %></p>
+        </div>
+        <img src="<%= sliderData[sliderData.length - 1].image_path %>" alt="Slide">
+      </div>
+
+      <!-- Real Slides -->
+      <% sliderData.forEach((slide, index) => { %>
+        <div class="slide slide<%= index + 1 %>">
+          <div class="slide-content">
+            <h2><%= slide.title %></h2>
+            <p><%= slide.description %></p>
+          </div>
+          <img src="<%= slide.image_path %>" alt="Slide <%= index + 1 %>">
+        </div>
+      <% }) %>
+
+      <!-- Clone First Slide -->
+      <div class="slide slide1">
+        <div class="slide-content">
+          <h2><%= sliderData[0].title %></h2>
+          <p><%= sliderData[0].description %></p>
+        </div>
+        <img src="<%= sliderData[0].image_path %>" alt="Slide">
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots">
+      <% sliderData.forEach((slide, index) => { %>
+        <div class="dot <%= index === 0 ? 'active' : '' %>" data-index="<%= index %>"></div>
+      <% }) %>
+    </div>
+  </div>
+  <!-- horizontal -Container -->
+  <div class="Horizontal-Container">
+    <div class="text">Men-Formal Styles
+      <a href="/style/men-formal">See more</a>
+    </div>
+    <div class="sliders">
+      <button class="slide-btn left" id="slideLeft">&#10094</button>
+      <div class="slider-items" id="sliderItems">
+        <% men.forEach(product => { %>
+          <img src="<%= product.image_path %>" alt="<%= product.title %>" />
+        <% }) %>
+      </div>
+      <button class="slide-btn right" id="slideRight">&#10095</button>
+    </div>
+  </div>
+
+
+  <div class="container" id="boxContainer">
+    
+    <% boxed.forEach((item) => { %>
+      <div class="box">
+        <h3><%= item.category_title %></h3>
+        
+        <img src="<%= item.image_path %>" alt="<%= item.label %>" />
+        <p><%= item.label %></p>
+        <a href="/see-more/1">See More</a>
+
+      </div>
+    <% }) %>
+  </div>
+
+  <!-- horizontal -Container -->
+  <div class="Horizontal-Container">
+    <div class="text">Trending Sarees
+      <a href="/style/Saree">See more</a>
+    </div>
+    <div class="sliders">
+      <button class="slide-btn left" id="slideLeft1">&#10094</button>
+      <div class="slider-items" id="sliderItem1">
+        <% Saree.forEach(product => { %>
+          <img src="<%= product.image_path %>" alt="<%= product.title %>" />
+        <% }) %>
+      </div>
+      <button class="slide-btn right" id="slideRight1">&#10095</button>
+    </div>
+  </div>
+  <div class="container" id="secondBoxContainer">
+    
+    <% boxed.forEach((item) => { %>
+      <div class="box">
+        <h3><%= item.category_title %></h3>
+        
+        <img src="<%= item.image_path %>" alt="<%= item.label %>" />
+        <p><%= item.label %></p>
+        <a href="/see-more/2">See More</a>
+
+      </div>
+    <% }) %>
+  </div>
+
+
+
+
+
+
+    
+    <!-- horizontal -Container -->
+  <div class="Horizontal-Container">
+    <div class="text">Men-Casual Style
+      <a href="/style/Men Casual">See more</a>
+    </div>
+    <div class="sliders">
+      <button class="slide-btn left" id="slideLeft3">&#10094</button>
+      <div class="slider-items" id="sliderItem3">
+        <% menCasual.forEach(product => { %>
+          <img src="<%= product.image_path %>" alt="<%= product.title %>" />
+        <% }) %>
+      </div>
+      <button class="slide-btn right" id="slideRight3">&#10095</button>
+    </div>
+  </div>
+  <div class="Horizontal-Container">
+    <div class="text">Short Kurti for Summer
+      <a href="/style/Short Kurti">See more</a>
+    </div>
+    <div class="sliders">
+      <button class="slide-btn left" id="slideLeft2">&#10094</button>
+      <div class="slider-items" id="sliderItem2">
+        <% shortKurti.forEach(product => { %>
+          <img src="<%= product.image_path %>" alt="<%= product.title %>" />
+        <% }) %>
+      </div>
+      <button class="slide-btn right" id="slideRight2">&#10095</button>
+    </div>
+  </div>
+
+  <!-- white sapce horizantal -->
+  <div class="explore-section">
+    <div class="explore-more-text">
+      <h2>Explore More</h2>
+      <a href="/explore">See more</a>
+    </div>
+
+    <div class="explore-wrapper">
+      <button class="scroll-btn left-btn">&#10094;</button>
+
+      <div class="explore-scroll" id="exploreScroll">
+        <% womenFormal.forEach(function(product) { %>
+          <div class="product-card">
+            <img src="<%= product.image_path %>" alt="<%= product.product_name %>">
+            <p><%= product.product_name %></p>
+          </div>
+        <% }); %>
+      </div>
+
+      <button class="scroll-btn right-btn">&#10095;</button>
+    </div>
+  </div>
+
+
+
+
+  <div class="Horizontal-Container">
+    <div class="text">Check More Styles
+      <a href="/style/Lehanga">See more</a>
+    </div>
+    <div class="sliders">
+      <button class="slide-btn left" id="slideLeft4">&#10094</button>
+      <div class="slider-items" id="sliderItem4">
+        <% Lehanga.forEach(product => { %>
+          <img src="<%= product.image_path %>" alt="<%= product.title %>" />
+        <% }) %>
+      </div>
+      <button class="slide-btn right" id="slideRight4">&#10095</button>
+    </div>
+  </div>
+
+  <div class="carousel-container">
+    <h2>Additional items to explore
+      <a href="/explore-item">See more</a>
+    </h2>
+    <div class="carousel-wrapper">
+      <button class="arrow left">&#10094;</button>
+
+      <div class="carousel-view">
+        <div class="carousel">
+          <% exploreItem.forEach(item => { %>
+            <div class="product-card">
+              <div class="img-box">
+                <img src="<%= item.image_path %>" alt="<%= item.product_name %>" />
+              </div>
+              <div class="product-info">
+                <h3><%= item.product_name %></h3>
+                <p>
+                  <% for(let i = 0; i < 5; i++) { %>
+                    <%= i < item.rating ? '⭐' : '☆' %>
+                  <% } %> (<%= item.review_count %>)
+                </p>
+                <p>₹<%= item.price %></p>
+                <p><%= item.carts %></p>
+                <p><%= item.delivery_info %></p>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+
+      <button class="arrow right">&#10095;</button>
+    </div>
+  </div>
+
+
+  <%- include('partials/footer') %>

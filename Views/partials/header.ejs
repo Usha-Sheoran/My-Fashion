@@ -1,0 +1,97 @@
+<!-- ✅ HEADER START -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<nav class="navbar">
+  <a href="/" class="logo">MyFashion</a>
+  <div class="search-box">
+    
+    <form action="/search" method="get" >
+        <input type="hidden" value="<%=tableName%>" name="product_type">
+        
+        <input type="text" name="search" placeholder="Search MyFashion.in" required>
+        <button type="submit">Search</button>
+      </form>
+ 
+      
+        
+    
+    
+  </div>
+  <div class="cart-login">
+    <a href="/cart">   🛒 Cart (<%= cartCount %>)</a>
+    <% if (user) { %>
+      <span>👋 Welcome, <%= user.name %></span>
+      <a href="/logout">Logout</a>
+    <% } else { %>
+      <a href="/Form">👤 Sign In</a>
+    <% } %>
+  </div>
+</nav>
+
+<div class="nav-menu">
+  <ul class="menu">
+    <li><a href="/menCollection">Men's Fashion</a></li>
+    <li><a href="/womenCollection">Women's Fashion</a></li>
+    <li><a href="/newArrival">New Arrival</a></li>
+    <li><a href="/ModernFashion">Modern Fashion</a></li>
+    <li><a href="/offer">Offer</a></li>
+    <li><a href="/Trending-fashion">Trending's Fashion</a></li>
+  </ul>
+</div>
+
+<div class="top-header">
+  <div class="top-left">
+    <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+    <a href="/" class="logo">MyFashion</a>
+  </div>
+  <div class="top-right">
+    <a href="/cart">  🛒 Cart (<%= cartCount %>)</a>
+    <% if (user) { %>
+      <span>👋 <%= user.name %></span>
+      <a href="/logout">Logout</a>
+    <% } else { %>
+      <a href="/Form">👤 Sign In</a>
+    <% } %>
+  </div>
+</div>
+
+<div class="search-bar">
+  <!-- <form onsubmit="event.preventDefault(); alert('Searching...')">
+    <input type="text" placeholder="Search MyFashion.in" />
+    <button type="submit">🔍</button>
+  </form> -->
+  <!-- <form action="/search" method="get" onsubmit="event.preventDefault();">
+        <input type="hidden" value="<%=tableName%>" name="product_type">
+        
+        <input type="text" name="search" placeholder="Search MyFashion.in" required>
+        <button type="submit">Search</button>
+      </form> -->
+         <form action="/search" method="get" >
+        <input type="hidden" value="<%=tableName%>" name="product_type">
+        
+        <input type="text" name="search" placeholder="Search MyFashion.in" required>
+        <button type="submit">Search</button>
+      </form>
+ 
+</div>
+
+<div class="sidebar" id="sidebar">
+  <a href="/menCollection">Men's Fashion</a>
+  <a href="/womenCollection">Women's Fashion</a>
+  <a href="/kidCollection.html">Kids</a>
+  <a href="#">New Arrival</a>
+  <a href="#">Modern Fashion</a>
+  <a href="#">Offer</a>
+  <a href="#">Trending's Fashion</a>
+  <a href="/FootwearCollection">Footwear</a>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cartCount").textContent = cart.length;
+  });
+</script>
+<!-- ✅ HEADER END -->

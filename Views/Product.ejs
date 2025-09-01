@@ -1,0 +1,36 @@
+ <link rel="stylesheet" href="/css/product.css">
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/script.js"></script>
+<%- include('partials/header') %> 
+<h1><%= type.toUpperCase() %> STYLES</h1>
+<div class="product-list">
+  <% product.forEach(product => { %>
+    <div class="product-card">
+      <img src="<%= product.image_path %>" alt="<%= product.title %>">
+
+      <h3><%= product.title %></h3>
+      <div class="stars">
+    <% for (let i = 1; i <= 5; i++) { %>
+      <% if (i <= product.rating) { %>
+        <i class="fas fa-star" style="color: #ffc107;"></i>
+       <% } else { %>
+        <i class="far fa-star" style="color: #ccc;"></i> 
+      <% } %> 
+    <% } %>
+  </div>
+      <p>₹<%= product.price %></p>
+      
+  <form method="post" action="/cart/add-to-cart">
+  <input type="hidden" name="product_id" value="<%= product.id %>">
+  <input type="hidden" name="product_name" value="<%= product.title %>">
+  <input type="hidden" name="product_img" value="<%= product.image_path %>">
+  <input type="hidden" name="product_type" value="<%=tableName%>">
+  <input type="hidden" name="price" value="<%= product.price %>">
+  <input type="hidden" name="rating" value="1">
+  <button type="submit" class="add-btn">Add to Cart</button>
+</form>
+    </div>
+  <% }) %>
+</div>
+
+<%- include('partials/footer') %> 

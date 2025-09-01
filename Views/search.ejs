@@ -1,0 +1,52 @@
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/search.css">
+
+<%- include('partials/header.ejs') %>
+
+<div class="search-page">
+  <h1 class="search-heading">Search Results for "<%= search %>"</h1>
+
+  <% if (products.length === 0) { %>
+    <p class="no-results">No products found.</p>
+  <% } else { %>
+    <div class="search-grid">
+      <% products.forEach(product => { %>
+        <div class="search-card">
+          
+          <!-- ✅ Product Image -->
+          <div class="img-box">
+            <img src="<%= product.image_path || '/images/no-image.jpg' %>" 
+                 alt="<%= product.name %>" 
+                 class="search-img">
+          </div>
+
+          <!-- ✅ Product Details -->
+          <div class="card-body">
+            <h3 class="product-title"><%= product.name %></h3>
+            <div class="stars">
+    <% for (let i = 1; i <= 5; i++) { %>
+      <% if (i <= product.rating) { %>
+        <i class="fas fa-star" style="color: #ffc107;"></i>
+       <% } else { %>
+        <i class="far fa-star" style="color: #ccc;"></i> 
+      <% } %> 
+    <% } %>
+  </div>
+            <p class="product-price">₹ <%= product.price || 'N/A' %></p>
+            <!-- <p class="product-source">From: <span><%= product.source %></span></p> -->
+          </div>
+
+          <!-- ✅ Add to Cart Button -->
+          <form action="/cart/add-to-cart" method="post" class="cart-form">
+            <input type="hidden" name="product_id" value="<%= product.id %>">
+            <input type="hidden" name="product_type" value="<%= product.source %>">
+            <button type="submit" class="btn-add">Add to Cart</button>
+          </form>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+</div>
+
+<%- include('partials/footer.ejs') %>

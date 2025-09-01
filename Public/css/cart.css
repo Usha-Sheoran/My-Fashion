@@ -1,0 +1,121 @@
+
+  body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .cart-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .cart-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  /* Empty Cart Message */
+  .empty-cart {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+  }
+  .empty-cart a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .empty-cart a:hover {
+    text-decoration: underline;
+  }
+
+  /* Cart Item Layout */
+  .cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease;
+  }
+  .cart-item:hover {
+    background: #f5f5f5;
+  }
+
+  .cart-item img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: contain;
+    margin-right: 20px;
+  }
+
+  .item-details {
+    flex: 1;
+  }
+
+  .item-details h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+    color: #333;
+  }
+
+  .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff4d4d;
+    margin-bottom: 10px;
+  }
+
+  .price-remove {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Price aur remove button ke beech gap */
+    margin-top: 10px;
+  }
+
+  .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff4d4d;
+  }
+
+  .remove-btn {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .remove-btn:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+  }
+
+
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .cart-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cart-item img {
+      width: 80%;
+      margin-bottom: 10px;
+    }
+
+    .remove-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
